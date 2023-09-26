@@ -9,7 +9,7 @@ const Carousel = () => {
   const nextSlide = () => {};
 
   return (
-    <section className="slider-cont">
+    <section className="slider-container">
       {people.map((person) => {
         const { id, image, name, title, quote } = person;
 
