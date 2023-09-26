@@ -3,10 +3,19 @@ import { shortList, list, longList } from "./data";
 import { FaQuoteRight } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 const Carousel = () => {
-  const [people, setPeople] = useState(list);
+  const [people, setPeople] = useState(longList);
+  const [currentPerson, setCurrentPerson] = useState(0);
 
-  const prevSlide = () => {};
-  const nextSlide = () => {};
+  const prevSlide = () => {
+    let newPerson = (currentPerson - 1 + people.length) % people.length;
+
+    return setCurrentPerson(newPerson);
+  };
+  const nextSlide = () => {
+    let newPerson = (currentPerson + 1) % people.length;
+
+    return setCurrentPerson(newPerson);
+  };
 
   return (
     <section className="slider-container">
@@ -17,7 +26,11 @@ const Carousel = () => {
           <article
             className="slide"
             key={id}
-            style={{ transform: `translateX(${100 * index}%)` }}>
+            style={{
+              transform: `translateX(${100 * (index - currentPerson)}%)`,
+              opacity: index === currentPerson ? 1 : 0,
+              visibility: index === currentPerson ? `visible` : `hidden`,
+            }}>
             <img src={image} alt={name} className="person-img" />
             <h5 className="name">{name}</h5>
             <p className="title">{title}</p>
