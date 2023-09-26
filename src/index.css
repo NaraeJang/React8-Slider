@@ -261,7 +261,7 @@ ul {
   max-width: 800px;
   position: relative;
   height: 450px;
-  overflow: hidden;
+  overflow: hiddefn;
 }
 
 .slide {
@@ -356,4 +356,11 @@ ul {
 
 .prev-slide {
   transform: translateX(-100%);
+}
+/* ============= SLICK CSS =============== */
+.slick-container {
+  margin: 0 auto;
+  margin-top: 10rem;
+  width: 80vw;
+  max-width: 800px;
 }

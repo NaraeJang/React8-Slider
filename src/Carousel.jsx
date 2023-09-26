@@ -3,6 +3,7 @@ import { shortList, list, longList } from "./data";
 import { FaQuoteRight } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useEffect } from "react";
+
 const Carousel = () => {
   const [people, setPeople] = useState(longList);
   const [currentPerson, setCurrentPerson] = useState(0);
