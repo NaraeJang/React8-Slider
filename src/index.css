@@ -349,3 +349,11 @@ ul {
     font-size: 1.5rem;
   }
 }
+
+.next-slide {
+  transform: translateX(100%);
+}
+
+.prev-slide {
+  transform: translateX(-100%);
+}

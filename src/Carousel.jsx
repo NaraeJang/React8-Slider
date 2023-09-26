@@ -3,18 +3,21 @@ import { shortList, list, longList } from "./data";
 import { FaQuoteRight } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 const Carousel = () => {
-  const [people, setPeople] = useState(shortList);
+  const [people, setPeople] = useState(list);
 
   const prevSlide = () => {};
   const nextSlide = () => {};
 
   return (
     <section className="slider-container">
-      {people.map((person) => {
+      {people.map((person, index) => {
         const { id, image, name, title, quote } = person;
 
         return (
-          <article className="slide" key={id}>
+          <article
+            className="slide"
+            key={id}
+            style={{ transform: `translateX(${100 * index}%)` }}>
             <img src={image} alt={name} className="person-img" />
             <h5 className="name">{name}</h5>
             <p className="title">{title}</p>
